@@ -1,13 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { Helmet } from "react-helmet";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div>
+      <Helmet>
+        {/* <meta charSet="utf-8" /> */}
+        <title>Hoho</title>
+        {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+
+        <meta name="og:title" content="%OG_TITLE%" />
+        <meta name="og:description" content="%OG_DESCRIPTION%" />
+        <meta name="og:image" content="%OG_IMAGE%" />
+      </Helmet>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,8 +38,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
